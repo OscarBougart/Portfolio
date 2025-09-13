@@ -15,7 +15,7 @@ export const Gradient = () => {
 export const BottomLine = () => {
   return (
     <>
-      <div className="hidden absolute top-[55.25rem] left-10 right-10 h-0.25 bg-n-6 pointer-events-none xl:block" />
+      <div className="hidden absolute top-[55.25rem] left-10 right-10 h-0.25 bg-ls-4 pointer-events-none xl:block" />
 
       <PlusSvg className="hidden absolute top-[54.9375rem] left-[2.1875rem] z-2 pointer-events-none xl:block" />
 
@@ -39,7 +39,7 @@ export const BackgroundCircles = ({ parallaxRef }) => {
     <div className="container  ">
       {/* Moving background colored circle balls */}
       <MouseParallax strength={0.05} parallaxContainerRef={parallaxRef}>
-        <div className="absolute fill-ls-flower  left-[100%] origin-bottom rotate-[54deg]">
+        <div className="absolute fill-ls-flower bottom-[20%] left-[110%]  rotate-[54deg]">
           <svg
             className="w-52 h-52 opacity-40"
             viewBox="0 0 32.00 32.00"
@@ -61,7 +61,7 @@ export const BackgroundCircles = ({ parallaxRef }) => {
           </svg>
         </div>
 
-        <div className="absolute fill-ls-flower bottom-[80%] opacity-40 left-[10%] origin-bottom -rotate-[65deg]">
+        <div className="absolute fill-ls-flower opacity-40 left-[10%]  -rotate-[65deg]">
           <svg
             className="w-52 h-52"
             viewBox="0 0 32.00 32.00"
@@ -83,7 +83,7 @@ export const BackgroundCircles = ({ parallaxRef }) => {
           </svg>
         </div>
 
-        <div className="absolute fill-ls-flower  bottom-[20%] opacity-40 left-[100%] rotate-[70deg]">
+        <div className="absolute fill-ls-flower  bottom-40 opacity-40 left-[50%] rotate-[70deg]">
           <svg
             className="w-32 h-32"
             viewBox="0 0 32.00 32.00"

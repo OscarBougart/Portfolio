@@ -25,8 +25,8 @@ const App = () => {
         <Hero />
         <PortAbout />
         <PortSkills />
-        <PortContact />
         <PortProjects />
+        <PortContact />
         
     {/*    
         <Roadmap />

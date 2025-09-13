@@ -6,7 +6,7 @@ import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-  
+
 //
 //<a href="https://www.flaticon.com/free-icons/letter-o" title="letter o icons">Letter o icons created by prinda895 - Flaticon</a>
 //<a href="https://www.flaticon.com/free-icons/alphabet" title="alphabet icons">Alphabet icons created by Rohim - Flaticon</a>
@@ -14,16 +14,6 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 const Header = () => {
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
-
-  const toggleNavigation = () => {
-    if (openNavigation) {
-      setOpenNavigation(false);
-      enablePageScroll();
-    } else {
-      setOpenNavigation(true);
-      disablePageScroll();
-    }
-  };
 
   const handleClick = () => {
     if (!openNavigation) return;
@@ -38,9 +28,14 @@ const Header = () => {
       }`}
     >
       <div className=" flex items-center  justify-between px-5 lg:px-7.5 xl:px-10 max-lg:px-4">
-        <h1 className=" tracking-wider font-light h4 font-playfair uppercase text-ls-6 " alt="My name">
+        <a
+          href="#hero"
+          onClick={handleClick}
+          className=" tracking-wider font-light h4 font-playfair uppercase text-ls-6 "
+          alt="My name"
+        >
           Oscar Bougart
-        </h1>
+        </a>
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
@@ -52,9 +47,9 @@ const Header = () => {
                 key={item.id}
                 href={item.url}
                 onClick={handleClick}
-                className={`p-4 m-5  tracking-wider block relative text-sm font-grotesk uppercase text-ls-6  transition-colors hover:text-color-17 `}
+                className={`p-4 m-5  tracking-wider block relative text-sm font-medium font-grotesk uppercase text-ls-6  transition-colors hover:text-color-17 `}
               >
-                {item.title} 
+                {item.title}
               </a>
             ))}
           </div>
