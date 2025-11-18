@@ -12,10 +12,8 @@ import Roadmap from "./components/Roadmap";
 import Footer from "./components/Footer";
 import PortSkills from "./components/PortSkills";
 import PortAbout from "./components/PortAbout";
-import PortProjects from "./components/PortProjects"
-import PortContact from "./components/PortContact"
-
-
+import PortProjects from "./components/PortProjects";
+import PortContact from "./components/PortContact";
 
 const App = () => {
   return (
@@ -24,11 +22,11 @@ const App = () => {
         <Header />
         <Hero />
         <PortAbout />
-        <PortSkills />
         <PortProjects />
         <PortContact />
-        
-    {/*    
+        <Footer />
+
+        {/*    
         <Roadmap />
         <Benefits />
         <Collaboration />

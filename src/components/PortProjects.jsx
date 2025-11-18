@@ -1,82 +1,117 @@
-import { useRef } from "react";
-import { ScrollParallax } from "react-just-parallax";
-import { BackgroundCircles, BottomLine } from "./design/Hero"; // reuse hero bg elements
-import CompanyLogos from "./design/CompanyLogos"; // optional logos/icons
-
 const PortProjects = () => {
-  const parallaxRef = useRef(null);
-
   return (
-    <div id="projects">
-      <div className="relative pt-40 -mt-20">
-        {/* === Left vertical line === */}
-        <div className="hidden md:flex absolute left-1 top-1/2 flex-col items-center">
-          <div className="w-0.25 h-[10rem] bg-n-17/50 mt-[1rem]" />
-        </div>
+    <section id="projects" className="bg-ls-1 py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* === Heading === */}
 
-        {/* === Right vertical line === */}
-        <div className="hidden md:flex absolute right-[-3rem] top-1/2 flex-col items-center">
-          <span className="rotate-90 text-xs tracking-widest text-ls-6 mb-5">
-            oscar.bougart.dev@gmail.com
-          </span>
-          <div className="w-0.25 h-[20rem] bg-n-17/50 mt-[8rem]" />
-        </div>
+        <h1 className="text-center text-4xl md:text-6xl font-bold text-ls-8 mb-8">
+          Projects
+        </h1>
+        <p className="text-center text-ls-7 max-w-3xl mx-auto mb-16">
+          A selection of small personal projects.
+        </p>
 
-        {/* === Projects Section Content === */}
-        <div className="container relative h-auto" ref={parallaxRef}>
-          <div className="relative z-1 max-w-5xl mx-auto mb-20 md:mb-32">
-            <h2 className="text-ls-5 uppercase tracking-wider mb-4 text-left">
-              Projects
-            </h2>
-            <h1 className="text-4xl md:text-6xl font-bold text-ls-6 mb-8">
-              Showcasing My Work & Creative Solutions
-            </h1>
-            <p className="text-ls-6 opacity-80 max-w-3xl text-left mb-8">
-              Here’s a selection of my favorite projects — from full-stack web
-              apps to creative design experiments. Each project reflects my
-              approach to clean code, strong visuals, and user-centered
-              experiences.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-              <div className="bg-ls-1/50 p-8 rounded-2xl border border-ls-4">
-                <h3 className="text-xl font-semibold text-ls-6 mb-4">
-                  Featured Projects
-                </h3>
-                <ul className="space-y-2 text-ls-6 opacity-80">
-                  <li>🌐 Portfolio Website – React + Tailwind</li>
-                  <li>📱 Price Tracker App – Full-stack Django + React</li>
-                  <li>🎨 Interactive Art Showcase – Three.js</li>
-                </ul>
-              </div>
-              <div className="bg-ls-1/50 p-8 rounded-2xl border border-ls-4">
-                <h3 className="text-xl font-semibold text-ls-6 mb-4">
-                  My Approach
-                </h3>
-                <p className="text-ls-6 opacity-80">
-                  Each project is an opportunity to combine functionality with
-                  aesthetic appeal. I focus on performance, accessibility, and
-                  scalability while also experimenting with new technologies and
-                  ideas to push creative boundaries.
-                </p>
-              </div>
+        {/* === Project 1: The SpiritStack === */}
+        <div className="flex flex-col md:flex-row items-center mb-24 gap-10">
+          {/* Left: Placeholder Carousel */}
+          <div className="md:w-1/2 flex gap-4">
+            <div className="flex-1 bg-pink-200 border-2 border-pink-400 rounded-xl h-48 flex items-center justify-center text-pink-600">
+              Vintage 1
+            </div>
+            <div className="flex-1 bg-yellow-200 border-2 border-yellow-400 rounded-xl h-48 flex items-center justify-center text-yellow-600">
+              Vintage 2
+            </div>
+            <div className="flex-1 bg-green-200 border-2 border-green-400 rounded-xl h-48 flex items-center justify-center text-green-600">
+              Vintage 3
             </div>
           </div>
 
-          {/* Background decorative element */}
-          <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-            <ScrollParallax container={parallaxRef.current}>
-              <BackgroundCircles />
-            </ScrollParallax>
+          {/* Right: Info */}
+          <div className="md:w-1/2">
+            <h3 className="text-3xl font-bold text-ls-8 mb-4">
+              The SpiritStack
+            </h3>
+            <p className="text-ls-7 mb-4">
+              A colorful, vintage-themed website where bartenders and cocktail
+              lovers can easily discover new cocktail-making techniques
+              presented in a playful way.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="badge">React</span>
+              <span className="badge">Tailwind</span>
+              <span className="badge">JavaScript</span>
+              <span className="badge">Motion</span>
+            </div>
+            
           </div>
-
-          {/* Optional logos or icons */}
-          <CompanyLogos className="hidden relative mt-20 lg:block z" />
         </div>
 
-        <BottomLine />
+        {/* === Project 2: Feast & Fizz === */}
+        <div className="flex flex-col md:flex-row-reverse items-center mb-24 gap-10">
+          {/* Left: Placeholder Carousel */}
+          <div className="md:w-1/2 flex gap-4">
+            <div className="flex-1 bg-blue-200 border-2 border-blue-400 rounded-xl h-48 flex items-center justify-center text-blue-600">
+              Recipe 1
+            </div>
+            <div className="flex-1 bg-purple-200 border-2 border-purple-400 rounded-xl h-48 flex items-center justify-center text-purple-600">
+              Recipe 2
+            </div>
+            <div className="flex-1 bg-teal-200 border-2 border-teal-400 rounded-xl h-48 flex items-center justify-center text-teal-600">
+              Recipe 3
+            </div>
+          </div>
+
+          {/* Right: Info */}
+          <div className="md:w-1/2">
+            <h3 className="text-3xl font-bold text-ls-8 mb-4">Feast & Fizz</h3>
+            <p className="text-ls-7 mb-4">
+              A cocktail and food recipe app where users can search by name or
+              ingredient. Built with a full stack including a Django backend and
+              an external recipe API.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="badge">React</span>
+              <span className="badge">Vite</span>
+              <span className="badge">Tailwind</span>
+              <span className="badge">Django</span>
+              <span className="badge">API</span>
+            </div>
+            
+          </div>
+        </div>
+
+        {/* === Project 3: Starlit === */}
+        <div className="flex flex-col md:flex-row items-center mb-24 gap-10">
+          {/* Left: Placeholder Carousel */}
+          <div className="md:w-1/2 flex gap-4">
+            <div className="flex-1 bg-gray-200 border-2 border-gray-400 rounded-xl h-48 flex items-center justify-center text-gray-600">
+              Starlit 1
+            </div>
+            <div className="flex-1 bg-gray-300 border-2 border-gray-500 rounded-xl h-48 flex items-center justify-center text-gray-700">
+              Starlit 2
+            </div>
+            <div className="flex-1 bg-gray-400 border-2 border-gray-600 rounded-xl h-48 flex items-center justify-center text-gray-800">
+              Starlit 3
+            </div>
+          </div>
+
+          {/* Right: Info */}
+          <div className="md:w-1/2">
+            <h3 className="text-3xl font-bold text-ls-8 mb-4">Starlit</h3>
+            <p className="text-ls-7 mb-4">
+              A modern, professional-looking website concept for an AI product
+              idea. Sleek design, clean layout, and futuristic aesthetics.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="badge">React</span>
+              <span className="badge">CSS</span>
+              <span className="badge">HTML</span>
+            </div>
+            
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -31,7 +31,6 @@ import {
   searchMd,
   slack,
   sliders04,
-  telegram,
   twitter,
   yourlogo,
 } from "../assets";
@@ -306,24 +305,27 @@ export const socials = [
     title: "Discord",
     iconUrl: discordBlack,
     url: "#",
+    hoverColor: "hover:bg-indigo-600" // Discord purple/indigo
   },
   {
     id: "1",
     title: "Twitter",
     iconUrl: twitter,
     url: "#",
+    hoverColor: "hover:bg-sky-500" // Twitter blue
   },
   {
     id: "2",
     title: "Instagram",
     iconUrl: instagram,
     url: "#",
+    hoverColor: "hover:bg-pink-500" // Instagram pink
   },
- 
   {
     id: "4",
     title: "Facebook",
     iconUrl: facebook,
     url: "#",
-  },
+    hoverColor: "hover:bg-blue-600" // Facebook blue
+  }
 ];

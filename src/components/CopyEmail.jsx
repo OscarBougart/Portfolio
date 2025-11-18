@@ -15,7 +15,7 @@ const CopyEmail = () => {
     <div className="flex flex-col items-center">
       <button
         onClick={handleCopy}
-        className="px-5 py-3  text-md font-medium bg-pastel-1  rounded-full focus:outline-none"
+        className="px-5 py-3  text-md font-medium bg-ls-6  rounded-full focus:outline-none"
       >
         {copied ? "Copied!" : email}
       </button>

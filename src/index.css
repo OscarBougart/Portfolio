@@ -6,6 +6,10 @@
 .transition-backdrop {
   transition: backdrop-filter 0.5s ease, background-color 0.5s ease;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 :root {
   --font-grotesk: "Quicksand", sans-serif;
@@ -17,6 +21,15 @@
   --font-code: "IBM Plex Mono", monospace; /* optional: Source Code Pro is fine too */
   --font-source-code: "Source Code Pro", monospace;
 
+.badge {
+  @apply bg-ls-8 text-white text-xs px-3 py-1 rounded-full;
+}
+.btn-primary {
+  @apply bg-ls-8 text-white px-4 py-2 rounded-full hover:bg-ls-7 transition;
+}
+.btn-secondary {
+  @apply border border-ls-8 text-ls-8 px-4 py-2 rounded-full hover:bg-ls-8 hover:text-white transition;
+}
 
   color-scheme: dark;
 }
@@ -27,7 +40,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-ls-2 text-base;
+    @apply font-sans bg-ls-1 text-base;
   }
 }
 

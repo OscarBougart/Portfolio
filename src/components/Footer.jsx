@@ -1,29 +1,22 @@
 import React from "react";
-import Section from "./Section";
-import { socials } from "../constants";
 
 const Footer = () => {
   return (
-    <Section crosses className="!px-0 !py-10">
-      <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
-        <p className="caption text-n-4 lg:block">
-          © {new Date().getFullYear()}. All rights reserved.
+    <footer class="bg-ls-4 rounded-lg shadow-sm m-4 ">
+      <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <p className="text-md text-ls-8 opacity-70">
+          © {new Date().getFullYear()} Oscar Bougart. All rights reserved.
         </p>
-
-        <ul className="flex gap-5 flex-wrap">
-          {socials.map((item) => (
-            <a
-              key={item.id}
-              href={item.url}
-              target="_blank"
-              className="flex items-center justify-center w-10 h-10 bg-n-7 rounded-full transition-colors hover:bg-n-6"
-            >
-              <img src={item.iconUrl} width={16} height={16} alt={item.title} />
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+          <li>
+            <a href="#" class="hover:underline me-4 md:me-6">
+              {" "}
+              Built with React & TailwindCSS
             </a>
-          ))}
+          </li>
         </ul>
       </div>
-    </Section>
+    </footer>
   );
 };
 

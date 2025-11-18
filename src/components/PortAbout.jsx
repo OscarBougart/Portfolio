@@ -1,78 +1,149 @@
-import { useRef } from "react";
-import { ScrollParallax } from "react-just-parallax";
-import { BackgroundCircles, BottomLine } from "./design/Hero"; // reuse your hero bg elements
-import CompanyLogos from "./design/CompanyLogos"; // optional if you want logos here too
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaPython,
+  FaDatabase,
+  FaGithub,
+  FaJava,
+} from "react-icons/fa";
+import { SiTailwindcss, SiDjango, SiJavascript } from "react-icons/si";
+import { motion } from "framer-motion"
+
+
+const gridContainerVariants = {
+  hidden: { opacity:0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren:0.25,
+    },
+  },
+}
+
+const gridSquareVariants = {
+  hidden: {opacity: 0 }, show: { opacity: 1 }
+}
+
+/* === Card Component for Skills === */
+const SkillCard = ({ icon, label }) => (
+  <div
+    className="
+      bg-white dark:bg-neutral-800 
+      rounded-xl shadow-md hover:shadow-xl 
+      hover:-translate-y-2 transform transition-all duration-300
+      flex flex-col items-center justify-center p-6
+    "
+  >
+    {icon}
+    <p className="text-lg font-medium text-ls-7 mt-3">{label}</p>
+  </div>
+);
+
+const MotionSkillCard = motion(SkillCard);
+
 
 const PortAbout = () => {
-  const parallaxRef = useRef(null);
-
   return (
-    <div id="about">
-      <div className="relative pt-40 -mt-20">
-        {/* === Left vertical line with socials === */}
-        <div className="hidden md:flex absolute left-1 top-1/2 flex-col items-center ">
-          <ul className="flex flex-col gap-5 mb-5">
-            {/* optional social links here */}
-          </ul>
-          <div className="w-0.25 h-[10rem] bg-n-17/50 mt-[1rem]" />
-        </div>
+    <section id="about" className="bg-ls-2 py-20">
+      <div className="font-playfair max-w-6xl mx-auto px-6 flex flex-col items-center text-start">
+        {/* === Intro Text === */}
+        <h1 className="mt-10 h2 font-bold py-5 text-ls-8 mb-4">About Me</h1>
+        <p className="max-w-3xl text-ls-7 font-thin tracking-wider font-merriweather leading-relaxed mb-6">
+          I’m Oscar Bougart, a full-stack web developer passionate about
+          building intuitive digital experiences. I specialize in web and app
+          development, continuously learning new tools and refining my craft.
+        </p>
+        <p className="max-w-3xl text-ls-7 font-merriweather font-thin leading-relaxed mb-12">
+          With a decade of hospitality experience, I bring a strong focus on
+          teamwork, adaptability, and customer-centric thinking to every project.
+          I thrive in collaborative environments and am always eager to explore
+          new technologies to push my creativity further.
+        </p>
 
-        {/* === Right vertical line with email === */}
-        <div className="hidden md:flex absolute right-[-3rem] top-1/2 flex-col items-center ">
-          <span className="rotate-90 text-xs tracking-widest text-ls-6 mb-5">
-            oscar.bougart.dev@gmail.com
-          </span>
-          <div className="w-0.25 h-[20rem] bg-n-17/50 mt-[8rem]" />
-        </div>
+        {/* === Stacks Section === */}
+        <motion.div 
+          variants = {{ gridContainerVariants }}
+          initial= "hidden"
+          animate= "show"
+          className="w-full mb-16">
+          <h2 className="text-3xl font-semibold text-ls-8 mb-8 text-center">Stacks</h2>
 
-        {/* === About Section Content ===https://www.youtube.com/watch?v=4yBxb5RQxPs&ab_channel=SnippetsCode */}
-        <div
-          className="container relative grid-flow-row font-grotesk h-auto"
-          ref={parallaxRef}
-        >
-          <h1 className="absolute  top-[25rem] font-rubik  -rotate-90 origin-left text-8xl text-ls-6 px-2">
-            About Me
-          </h1>
-          <div className="flex-col z-1 max-w-5xl mx-auto mb-20 md:mb-32">
-            <p className="text-ls-6 tracking-wide w-3/5 opacity-90 max-w-3xl text-left mb-8 pl-6 py-4 bg-ls-2/30 rounded-lg shadow-md leading-relaxed">
-              I’m Oscar Bougart, a full-stack web developer driven by curiosity
-              and growth. I turn ideas into functional digital projects using my
-              experience in both web and app design, while constantly learning
-              new tools and approaches to refine my craft. My goal is to create
-              digital experiences that feel intuitive, consistent, and enjoyable
-              for the people who use them.
-            </p>
-
-            <div className="  gap-10 mt-12">
-              <div className="">
-                <h3 className="text-xl font-semibold text-right text-ls-6 mb-4">
-                  Beyond the Code
-                </h3>
-                <p className="text-ls-6 tracking-wide w-3/5 opacity-90 max-w-3xl text-left mb-8 pl-6 py-4 bg-ls-2/30 rounded-lg shadow-md leading-relaxed ml-auto">
-                  Before moving into tech, I spent a decade working in
-                  hospitality, where I learned the importance of service,
-                  collaboration, and consistency. Those experiences continue to
-                  shape how I approach development — focusing on teamwork,
-                  adaptability, and understanding what people need. I’m also
-                  beginning to explore game design with Unity and C#,
-                  experimenting with small interactive ideas and playful
-                  mechanics.
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaHtml5 className="text-5xl text-orange-500" />}
+              label="HTML5"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaCss3Alt className="text-5xl text-blue-500" />}
+              label="CSS3"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<SiJavascript className="text-5xl text-yellow-400" />}
+              label="JavaScript"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaReact className="text-5xl text-sky-400" />}
+              label="React"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaJava className="text-5xl text-orange-600" />}
+              label="Java"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<SiTailwindcss className="text-5xl text-teal-400" />}
+              label="Tailwind"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaPython className="text-5xl text-yellow-500" />}
+              label="Python"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<SiDjango className="text-5xl text-green-700" />}
+              label="Django"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaDatabase className="text-5xl text-purple-500" />}
+              label="SQL"
+            />
+            <MotionSkillCard
+              variants={{ gridSquareVariants }}
+              icon={<FaGithub className="text-5xl text-gray-600" />}
+              label="GitHub"
+            />
           </div>
+        </motion.div>
 
-          {/* Background decorative element (reuse from Hero) */}
-          <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24"></div>
-
-          {/* Optional logos or icons */}
-          
+        {/* === Beyond the Code Section === */}
+        <div className="w-full  rounded-xl p-8 flex flex-col justify-center items-center text-start">
+          <div className="h2 font-semibold font-playfair text-ls-8 mb-6">
+            Beyond the Code
+          </div>
+          <p className="max-w-3xl text-ls-7 leading-relaxed font-grotesk mb-4">
+            Before tech, I spent a decade in hospitality where I honed
+            collaboration, adaptability, and service excellence. These values
+            guide my approach to development.
+          </p>
+          <p className="max-w-3xl text-ls-7 leading-relaxed font-grotesk">
+            I’m also exploring game design with Unity and C#, experimenting with
+            interactive and playful mechanics. Outside coding, I love cooking,
+            drawing, and discovering new artistic mediums to inspire my work.
+          </p>
         </div>
-
-        
       </div>
-    </div>
+    </section>
   );
 };
+
+
 
 export default PortAbout;

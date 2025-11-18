@@ -18,7 +18,7 @@ const PortSkills = () => {
   const parallaxRef = useRef(null);
 
   return (
-    <div id="skills">
+    <section id="skills">
       <div className="relative pt-40 -mt-20">
         {/* === Left vertical line with socials === */}
         <div className="hidden md:flex absolute left-1 top-1/2 flex-col items-center ">
@@ -102,7 +102,7 @@ const PortSkills = () => {
 
         <BottomLine />
       </div>
-    </div>
+    </section>
   );
 };
 
